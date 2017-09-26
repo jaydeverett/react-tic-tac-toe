@@ -115,7 +115,11 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
-    } else {
+    }
+    else if (!winner && current === history[9]) {
+      status = 'Tie game';
+    }
+    else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
